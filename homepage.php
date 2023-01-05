@@ -16,8 +16,10 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-yehf yehf
+	<main id="primary" class="site-main square-main container-fluid">
+        <div class="background-images">
+        <img class="background-image">
+        </div>
 		<?php
 		if ( have_posts() ) :
 
@@ -54,5 +56,4 @@ yehf yehf
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
