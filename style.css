@@ -742,6 +742,56 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+/* Homepage
+--------------------------------------------- */
+body {
+	color: white;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body ul {
+	text-align: center;
+	justify-content: center;
+}
+
+body ul a {
+	margin: 1em;
+	color: black !important;
+	display: block;
+	text-decoration: none;
+	font-size: 32px;
+	letter-spacing: 2px;
+}
+
+.main-navigation ul {
+	display: none;
+}
+
+#number-grid {
+	display: flex;
+	width: 75%;
+	margin: 0em 0em 0em 11em;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+button {
+	background-color: cadetblue;
+	opacity: 0.6;
+	width: 90px;
+	height: 75px;
+	margin: 5px;
+}
+
+@media only screen and (max-width: 650px) {
+	button {
+		width: 35px;
+		font-size: 8px;
+		height: 35px;
+		margin: 1.5px;
+	}
+}
+
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -750,15 +800,6 @@ textarea {
 
 .bypostauthor {
 	display: block;
-}
-
-/* Homepage
---------------------------------------------- */
-.square-main {
-	background-color: #8ee2cf;
-	opacity: 0.8;
-	width: 75% !important;
-	margin: 2em;
 }
 
 /* Widgets

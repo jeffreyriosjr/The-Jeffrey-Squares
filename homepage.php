@@ -2,7 +2,7 @@
 /**
  *
  * Template Name: Homepage Template
- * 
+ *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
@@ -16,44 +16,28 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main square-main container-fluid">
-        <div class="background-images">
-        <img class="background-image">
-        </div>
-		<?php
-		if ( have_posts() ) :
+<main id="primary" class="site-main square-main container-fluid">
+	<div class ="container-fluid ">
+		<header class="m-5 p-5">
+				<h1 class="page-title m-5"><?php single_post_title();?>
+				The-Jeffrey-Squares
+				</h1>
+		</header>
+			<div class="col-12"id="number-grid"></div>
+	</div>
+</main>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
-
+<script>
+	for (let i = 1; i <= 100; i++) {
+  const button = document.createElement('button');
+  button.innerText = i;
+  button.addEventListener('click', () => {
+    console.log(`You clicked on number ${i}`);
+  });
+  document.getElementById('number-grid').appendChild(button);
+}
+</script>
 <?php
 get_footer();
