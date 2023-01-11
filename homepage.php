@@ -23,21 +23,46 @@ get_header();
 				The-Jeffrey-Squares
 				</h1>
 		</header>
-			<div class="col-12"id="number-grid"></div>
+		<div id="container"></div>
 	</div>
 </main>
 
 
 
 <script>
-	for (let i = 1; i <= 100; i++) {
-  const button = document.createElement('button');
-  button.innerText = i;
-  button.addEventListener('click', () => {
-    console.log(`You clicked on number ${i}`);
+	// Step 1: Get a reference to the container element
+const container = document.getElementById("container");
+
+// Step 2: Loop 100 times to create 100 div elements, each representing a square
+for (let i = 0; i < 100; i++) {
+  // Create the square element
+  const square = document.createElement("div");
+  
+  // Step 3: Add a class to each square so that you can style it with CSS and give it a default appearance (e.g. empty)
+  square.classList.add("square");
+  
+  // Step 4: Append each square to the container element
+  container.appendChild(square);
+  
+  // Step 5: Add an event listener to each square that listens for a click event
+  square.addEventListener("click", function() {
+    if(this.classList.contains('square')){
+      this.classList.remove('square');
+      this.classList.add('square-filled');
+    }else{
+      this.classList.remove('square-filled');
+      this.classList.add('square');
+    }
+    // Step 6: Implement a function that checks when the squares are filled up,
+    //then implement a save feature 
+    if(document.querySelectorAll(".square-filled").length === 100){
+      //save feature code here
+    }
   });
-  document.getElementById('number-grid').appendChild(button);
 }
+
 </script>
 <?php
 get_footer();
+
+  

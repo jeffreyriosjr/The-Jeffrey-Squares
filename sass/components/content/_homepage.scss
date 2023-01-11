@@ -1,51 +1,21 @@
-// .square-main {
-//     background-color: rgb(142, 226, 207);
-//     opacity: 0.8;
-//     width: 75% !important;
-//     margin: 2em;
-// }
-body {
-    color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
-    ul {
-        text-align: center;
-        justify-content: center;
-
-        a {
-            margin: 1em;
-            color: black !important;
-            display: block;
-            text-decoration: none;
-            font-size: 32px;
-            letter-spacing: 2px;
-        }
-    }
-}
-
-.main-navigation ul {
-    display: none;
-}
-
-#number-grid {
+.container {
     display: flex;
-    width: 75%;
-    margin: 0em 0em 0em 11em;
+    width: 33em;
     flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
     align-items: center;
 }
 
-button {
-    background-color: cadetblue;
-    opacity: 0.6;
-    width: 90px;
-    height: 75px;
-    margin: 5px;
-
-    @media only screen and (max-width: 650px) {
-        width: 35px;
-        font-size: 8px;
-        height: 35px;
-        margin: 1.5px;
-    }
-}
+.square { 
+    color: black;
+    width: 135px;
+    height: 135px;
+    border: 1px solid black;
+    display: inline-block;
+  }
+  
+  .square-filled {
+    background-color: blue;
+  }
+  
