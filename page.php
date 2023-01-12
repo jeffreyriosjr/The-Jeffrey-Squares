@@ -17,6 +17,34 @@ get_header();
 
 	<main id="primary" class="site-main">
 
+	<table>
+  <tr>
+    <td>AFC 1</td>
+    <td>AFC 2</td>
+	<td>AFC 3</td>
+  </tr>
+  <tr>
+    <td>AFC 4</td>
+    <td>AFC 5</td>
+	<td>AFC 6</td>
+
+  </tr>
+  <tr>
+    <td>NFC 1</td>
+    <td>NFC 2</td>
+    <td>NFC 3</td>
+
+</tr>
+  <tr>
+    <td>NFC 4</td>
+    <td>NFC 5</td>
+	<td>NFC 6</td>
+  </tr>
+</table>
+
+
+
+
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -34,5 +62,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
-get_footer();
+// get_sidebar();
+// get_footer();

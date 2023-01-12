@@ -1,21 +1,33 @@
 .container {
-    display: flex;
-    width: 33em;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 33em;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
-.square { 
-    color: black;
-    width: 135px;
-    height: 135px;
-    border: 1px solid black;
-    display: inline-block;
-  }
-  
+.square {
+  color: black;
+  width: 135px;
+  height: 135px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.square-filled {
   .square-filled {
-    background-color: blue;
+    padding: 0;
+    border: none;
   }
-  
+
+}
+
+.square-filled span {
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: aliceblue;
+  text-align: center;
+  font-size: medium;
+  text-transform: uppercase;
+  font-weight: bold;
+}

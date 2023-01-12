@@ -718,28 +718,13 @@ textarea {
 
 /* Posts and pages
 --------------------------------------------- */
-.sticky {
-	display: block;
+table {
+	border-collapse: collapse;
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+td {
+	border: 1px solid black;
+	padding: 10px;
 }
 
 /* Homepage
@@ -761,8 +746,18 @@ textarea {
 	display: inline-block;
 }
 
-.square-filled {
-	background-color: blue;
+.square-filled .square-filled {
+	padding: 0;
+	border: none;
+}
+
+.square-filled span {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: aliceblue;
+	text-align: center;
+	font-size: medium;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 /* Comments
