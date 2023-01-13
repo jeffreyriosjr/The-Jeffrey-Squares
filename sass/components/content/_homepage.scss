@@ -1,33 +1,69 @@
-.container {
+#jeffsquares {
   display: flex;
-  width: 33em;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   align-content: center;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .square {
+  font-size: 16px;
   color: black;
   width: 135px;
-  height: 135px;
+  height: 130px;
   border: 1px solid black;
-  display: inline-block;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-.square-filled {
-  .square-filled {
-    padding: 0;
-    border: none;
+  span {
+    margin: 24px;
+    justify-content: center;
+  }
+
+  @media only screen and(max-width: 815px) {
+    width: 70px;
+    height: 70px;
   }
 
 }
 
+.center-align {
+  display: inline-block;
+}
+
+.square-filled {
+  background-color: aqua;
+  overflow: hidden;
+}
+
+input {
+  width: 50px;
+  font-size: 10px;
+  color: #333;
+}
+
+button {
+  position: relative;
+  font-size: 12px;
+  background-color: burlywood;
+}
+
 .square-filled span {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  color: aliceblue;
+  font-size: 18px;
+  margin: 0;
+  color: #bcbcda;
   text-align: center;
-  font-size: medium;
-  text-transform: uppercase;
   font-weight: bold;
+  padding: 0px;
+  width: auto;
+
 }
