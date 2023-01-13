@@ -73,35 +73,49 @@ function handleSquareClick() {
   input.setAttribute("maxlength", "12");
   const submitBtn = document.createElement("button");
   // set button text
-  submitBtn.textContent = "confirm";
+  submitBtn.textContent = "Final pick?";
   //append input and button to square
   this.appendChild(input);
   this.appendChild(submitBtn);
-
-  // Create the unclick button
-  const unclickBtn = document.createElement("button");
-  unclickBtn.textContent = "Unclick";
-  unclickBtn.onclick = function() {
-    handleUnclick(input, this.parentNode, submitBtn);
+  
+  // Create the disappear button
+  const disappearBtn = document.createElement("button");
+  disappearBtn.textContent = "Are u Sure!?";
+  disappearBtn.onclick = function() {
+    this.style.display = "none";
   };
-  this.appendChild(unclickBtn);
+  this.appendChild(disappearBtn);
   
   // keep track of input and button element
   inputs.push(input);
   buttons.push(submitBtn);
   // Add an event listener to the submit button that listens for a click event
-  submitBtn.addEventListener("click", () => handleButtonClick(input, this, submitBtn, unclickBtn));
+  submitBtn.addEventListener("click", () => handleButtonClick(input, this, submitBtn, disappearBtn));
 }
 
-function handleUnclick(input, square, submitBtn) {
+
+function handleButtonClick(input, square, button) {
+  //get input value
+  const name = input.value;
+  if (!validateInput(input)) {
+    //display error message and return;
+    return;
+  }
+  // create text node
+  const textNode = document.createTextNode(name);
+  // append text node to square
+  square.appendChild(textNode);
   // remove input and button
-  square.removeChild(input);
-  square.removeChild(submitBtn);
-  square.removeChild(unclickBtn);
-  square.classList.remove("square-filled");
-  square.filled = false;
-  square.addEventListener("click", handleSquareClick);
+  square.removeChild(inputs[inputs.indexOf(input)]);
+  square.removeChild(buttons[buttons.indexOf(button)]);
+  square.classList.add("square-filled");
+  square.filled = true;
+  square.removeEventListener("click", handleSquareClick);
+  if (document.querySelectorAll(".square-filled").length === 100) {
+    //save feature code here
+  }
 }
+
 
 
 
