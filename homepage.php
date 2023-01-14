@@ -23,11 +23,42 @@ get_header();
 				The-Jeffrey-Squares
 				</h1>
 		</header>
+    <div class="generator">
+    <div id="list1"></div>
+<div id="list2"></div>
+<button id="myButton">Generate The Numbers!</button>
+    <div id="output"></div>
+    </div>
 		<div id="jeffsquares"></div>
 	</div>
 </main>
 
 
+
+<script>
+  var button = document.getElementById("myButton");
+  var clickCount = 0;
+  var list1 = [], list2 = [];
+  button.addEventListener("click", function() {
+    if (clickCount < 2) {
+      var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      numbers.sort(function() {
+        return 0.5 - Math.random();
+      });
+      if (clickCount === 0) {
+        list1 = numbers;
+      } else {
+        list2 = numbers;
+      }
+      clickCount++;
+    } else {
+      button.disabled = true;
+      alert("You can only generate 2 random lists.");
+    }
+    document.getElementById("list1").innerHTML = list1;
+    document.getElementById("list2").innerHTML = list2;
+  });
+</script>
 
 <script>
 
@@ -115,8 +146,6 @@ function handleButtonClick(input, square, button) {
     //save feature code here
   }
 }
-
-
 
 
 </script>
