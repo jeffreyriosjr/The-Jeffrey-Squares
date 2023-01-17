@@ -24,11 +24,14 @@ get_header();
 				</h1>
 		</header>
     <div class="generator">
-    <div id="list1"></div>
-<div id="list2"></div>
-<button id="myButton">Generate The Numbers!</button>
-    <div id="output"></div>
+    <div id="list1" class="left-numbers"></div>
     </div>
+    <div class="generator">
+    <div id="list2" class="top-numbers"></div>
+    </div>
+    <button id="myButton">Generate The Numbers!</button>
+    <div id="output"></div>
+    
 		<div id="jeffsquares"></div>
 	</div>
 </main>
@@ -57,6 +60,24 @@ get_header();
     }
     document.getElementById("list1").innerHTML = list1;
     document.getElementById("list2").innerHTML = list2;
+    document.getElementById("list1").innerHTML = "";
+    for (var i = 0; i < list1.length; i++) {
+    var node = document.createElement("LI");
+    var textnode = document.createTextNode(list1[i]);
+    node.appendChild(textnode);
+    document.getElementById("list1").appendChild(node);
+    }
+
+    document.getElementById("list2").innerHTML = "";
+    list2.forEach(function(item) {
+    var node = document.createElement("SPAN");
+    var textnode = document.createTextNode(item);
+    node.appendChild(textnode);
+    document.getElementById("list2").appendChild(node);
+    });
+
+
+
   });
 </script>
 
@@ -108,7 +129,7 @@ function handleSquareClick() {
   //append input and button to square
   this.appendChild(input);
   this.appendChild(submitBtn);
-  
+
   // Create the disappear button
   const disappearBtn = document.createElement("button");
   disappearBtn.textContent = "Are u Sure!?";
@@ -116,7 +137,7 @@ function handleSquareClick() {
     this.style.display = "none";
   };
   this.appendChild(disappearBtn);
-  
+
   // keep track of input and button element
   inputs.push(input);
   buttons.push(submitBtn);
