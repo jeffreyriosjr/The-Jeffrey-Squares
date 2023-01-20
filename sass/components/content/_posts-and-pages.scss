@@ -1,9 +1,18 @@
-table {
-	border-collapse: collapse;
+
+  table {
+    width: 100%;
   }
   
   td {
-	border: 1px solid black;
-	padding: 10px;
+    color: black;
+    border: 2px solid;
+    height: 75px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    td {
+      width: 20%;
+      height: 20%;
+    }
   }
   

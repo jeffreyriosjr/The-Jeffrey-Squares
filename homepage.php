@@ -16,7 +16,9 @@
 get_header();
 ?>
 
+
 <main id="primary" class="site-main square-main">
+  
 	<div class ="container-fluid">
 		<header class="m-1 p-1">
 				<h1 class="page-title m-5"><?php single_post_title();?>
@@ -29,14 +31,19 @@ get_header();
     <div class="generator">
     <div id="list2" class="top-numbers"></div>
     </div>
+    <div id="output">
     <button id="myButton">Generate The Numbers!</button>
-    <div id="output"></div>
+
+    </div>
     
 		<div id="jeffsquares"></div>
 	</div>
+
+
+
+  
+
 </main>
-
-
 
 <script>
   var button = document.getElementById("myButton");
@@ -148,6 +155,11 @@ function handleSquareClick() {
 
 function handleButtonClick(input, square, button) {
   //get input value
+  function handleSquareClick() {
+  if (!validateInput(this.input)) return;
+  // rest of the code here
+}
+
   const name = input.value;
   if (!validateInput(input)) {
     //display error message and return;
@@ -166,6 +178,13 @@ function handleButtonClick(input, square, button) {
   if (document.querySelectorAll(".square-filled").length === 100) {
     //save feature code here
   }
+}
+function validateInput(input) {
+  if (input.value.trim() === "") {
+    alert("Input is required");
+    return false;
+  }
+  return true;
 }
 
 

@@ -11,18 +11,26 @@
   }
 }
 
+#output {
+  top: -10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 1em 1em 1em;
+}
+
 .left-numbers {
-  width: 0;
+  width: auto;
   height: 0px;
   position: relative;
-  bottom: -5em;
-  left: -18.5em;
+  bottom: -6em;
+  left: -22em;
   display: block;
   text-align: center;
-  font-size: 30px;
+  font-size: 32px;
   line-height: 125px;
   list-style: none;
-  color: beige;
+  color: red;
   background: black;
 }
 
