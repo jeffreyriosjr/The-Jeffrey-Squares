@@ -25,6 +25,12 @@ get_header();
 				The-Jeffrey-Squares
 				</h1>
 		</header>
+  
+    <!-- <div class ="container-fluid">
+    <?php echo do_shortcode('[ninja_form id=1]'); ?>
+  </div> -->
+  
+
     <div class="generator">
     <div id="list1" class="left-numbers"></div>
     </div>
@@ -91,6 +97,18 @@ get_header();
 <script>
 
 const jeffsquares = document.getElementById("jeffsquares");
+let filledSquares = 0;
+const generatorButton = document.getElementById("myButton");
+generatorButton.disabled = true;
+
+function handleSquareClick() {
+  if (!validateInput(this.input)) return;
+  filledSquares++;
+  if (filledSquares === 100) {
+    generatorButton.disabled = false;
+  }
+  // rest of the code here
+}
 
 let buttons = [];
 let inputs = [];
@@ -127,6 +145,13 @@ function handleSquareClick() {
   if (this.querySelector("input") || this.querySelector("button")) {
     return;
   }
+
+  const nameInput = document.getElementById("name");
+const nicknameInput = document.getElementById("nickname");
+
+
+
+
   // create input and button element
   const input = document.createElement("input");
   input.setAttribute("maxlength", "12");
@@ -186,7 +211,17 @@ function validateInput(input) {
   }
   return true;
 }
+document.getElementById("user-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  const nameInput = document.getElementById("name");
+  const nicknameInput = document.getElementById("nickname");
 
+  if (!nameInput.value.trim() || !nicknameInput.value.trim()) {
+    alert("Please fill out name and nickname form before selecting a square.");
+    return;
+  }
+  // rest of the code
+});
 
 </script>
 
